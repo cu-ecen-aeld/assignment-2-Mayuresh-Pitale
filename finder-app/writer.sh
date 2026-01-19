@@ -2,8 +2,7 @@
 #Author: Mayuresh Pitale
 # Date: 2026-01-15
 # Description: This script writes a given string to a specified file.
-
-
+# reference: https://gemini.google.com/share/201ab3ee6a76
 
 # Check for required arguments are 2 or not
 if [ $# -ne 2 ]; then
