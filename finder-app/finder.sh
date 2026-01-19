@@ -1,6 +1,10 @@
 #!/bin/sh
+#Author: Mayuresh Pitale
+# Date: 2026-01-15
+# Description: This script counts the number of files in a directory and the number of lines matching a given string.
+#refference: https://gemini.google.com/share/1764d95b6488
 
-# Check for required arguments
+# Check for required arguments are 2 or not
 if [ $# -ne 2 ]; then
     echo "Error: Two arguments required."
     echo "Usage: $0 <filesdir> <searchstr>"
@@ -20,9 +24,9 @@ fi
 num_files=$(find "$filesdir" -type f | wc -l)
 
 # Count number of matching lines
-num_matching_lines=$(grep -r "$searchstr" "$filesdir" 2>/dev/null | wc -l)
+matching_lines=$(grep -r "$searchstr" "$filesdir" 2>/dev/null | wc -l)
 
 # Print result
-echo "The number of files are $num_files and the number of matching lines are $num_matching_lines"
+echo "The number of files are $num_files and the number of matching lines are $matching_lines"
 
 exit 0

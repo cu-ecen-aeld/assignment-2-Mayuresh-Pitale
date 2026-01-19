@@ -1,6 +1,11 @@
 #!/bin/sh
+#Author: Mayuresh Pitale
+# Date: 2026-01-15
+# Description: This script writes a given string to a specified file.
 
-# Check for required arguments
+
+
+# Check for required arguments are 2 or not
 if [ $# -ne 2 ]; then
     echo "Error: Two arguments required."
     echo "Usage: $0 <writefile> <writestr>"
@@ -10,15 +15,15 @@ fi
 writefile="$1"
 writestr="$2"
 
-# Create directory path if it does not exist
+# Create directory path if it doesn't exist
 writedir=$(dirname "$writefile")
 if ! mkdir -p "$writedir"; then
     echo "Error: Could not create directory path $writedir"
     exit 1
 fi
 
-# Write string to file (overwrite if exists)
-if ! echo "$writestr" > "$writefile"; then
+# Write string to file
+if ! printf "%s\n" "$writestr" > "$writefile"; then
     echo "Error: Could not create or write to file $writefile"
     exit 1
 fi
